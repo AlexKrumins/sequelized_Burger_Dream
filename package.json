@@ -1,0 +1,31 @@
+{
+  "name": "dream_burger",
+  "version": "1.0.0",
+  "description": "Homework_Exercise_14",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexKrumins/Dream_Burger.git"
+  },
+  "keywords": [
+    "MySQL",
+    "Node",
+    "Express",
+    "Handlebars",
+    "ORM"
+  ],
+  "author": "Alex Krumins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexKrumins/Dream_Burger/issues"
+  },
+  "homepage": "https://github.com/AlexKrumins/Dream_Burger#readme",
+  "dependencies": {
+    "express": "^4.17.0",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.17.1"
+  }
+}

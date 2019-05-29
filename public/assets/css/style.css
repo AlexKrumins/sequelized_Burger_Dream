@@ -1,0 +1,74 @@
+body {
+  background-color: #ffcc00;
+  background-image: url("../images/bargar.jpg");
+  background-position: center center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+h1,h2 {
+  text-align: center;
+  font-family: 'Righteous', cursive;
+  margin-bottom: -5px;
+}
+
+div{
+  text-align: center;
+}
+
+#leftburgers {
+  margin-left: 30px;
+  position: relative;
+  float: left
+}
+
+#rightburgers {
+  margin-right: 30px;
+  position: relative;
+  float: right
+}
+
+ul{
+  font-weight: bold;
+  color: black;
+  text-shadow:
+    -1px -1px 0 white,  
+     1px -1px 0 white,
+     -1px 1px 0 white,
+      1px 1px 0 white;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+li {
+  border-radius: 25px !important;
+  font-family: 'Roboto', sans-serif;
+  padding: 5px;
+  margin: 10px;
+  background: rgba(255, 0, 0, 0.932);
+}
+
+button {
+  border-radius: 10px !important;
+  width: auto;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  transition: width 2s;
+}
+
+
+.label {
+  font-weight: bold;
+}
+
+.create-form {
+  text-align: center;
+  font-family: 'Righteous', cursive;
+  padding: 5px;
+  clear: both;
+}
+
+.form-group {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
