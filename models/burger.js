@@ -1,8 +1,29 @@
 module.exports = function(sequelize, DataTypes) {
   var Burger = sequelize.define("Burger", {
-    burger_name: DataTypes.STRING,
-    devoured: DataTypes.BOOLEAN
+    burger_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    devoured: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
+    }
   });
+
+  Burger.associate = function(models) {
+    // We're saying that a Burger should belong to a Chef
+    // A Burger can't be created without a Chef due to the foreign key constraint
+    Burger.belongsTo(models.Chef, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
   return Burger;
 };
 
