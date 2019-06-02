@@ -1,23 +1,4 @@
 $(function() {
-  $(".change-devour").on("click", function(event) {
-    var id = $(this).data("id");
-    var changeState = $(this).data("changestate");
-    console.log("changeState " + changeState)
-    var newState = {
-      devoured: changeState
-    };
-
-    $.ajax("/api/burgers/" + id, {
-      type: "PUT",
-      data: newState
-    }).then(
-      function() {
-        console.log("changed devoured state to", changeState);
-        location.reload();
-      }
-    );
-  });
-
   $(".create-form").on("submit", function(event) {
     event.preventDefault();
 
@@ -38,21 +19,5 @@ $(function() {
     } else {
       alert("Please give your dream burger a name.")
     }
-  });
-
-  $(".baku-delete").on("click", function(event) {
-    var currentPost = $(this)
-      .parent()
-      .parent()
-      .data("post");
-    deletePost(currentPost.id);
-  
-    $.ajax({
-      method: "DELETE",
-      url: "/api/posts/" + id
-    })
-      .then(function() {
-        location.reload();
-      });
   });
 });
