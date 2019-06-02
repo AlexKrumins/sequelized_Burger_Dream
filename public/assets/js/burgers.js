@@ -39,4 +39,20 @@ $(function() {
       alert("Please give your dream burger a name.")
     }
   });
+
+  $(".baku-delete").on("click", function(event) {
+    var currentPost = $(this)
+      .parent()
+      .parent()
+      .data("post");
+    deletePost(currentPost.id);
+  
+    $.ajax({
+      method: "DELETE",
+      url: "/api/posts/" + id
+    })
+      .then(function() {
+        location.reload();
+      });
+  });
 });
