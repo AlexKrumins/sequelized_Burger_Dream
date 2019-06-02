@@ -51,8 +51,6 @@ module.exports = function(app) {
 
   // PUT route for updating burgers. We can get the updated burger data from req.body
   app.put("/api/burgers", function(req, res) {
-    // Update takes in an object describing the properties we want to update, and
-    // we use where to describe which objects we want to update
     db.Burger.update(
       req.body,
       {
