@@ -28,6 +28,9 @@ module.exports = function(app) {
 
   // blog route loads blog.html
   app.get("/menu", function(req, res) {
+    if (url.indexOf("?chef_id") !== -1) {
+      chef_id = url.split
+    }
     db.Burger.findAll({})
     .then(function (dbBurger) {
       if (!dbBurger.length) {
