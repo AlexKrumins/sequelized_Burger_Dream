@@ -23,12 +23,11 @@ $(function() {
   $(".fired").on("click", function(event) {
     event.preventDefault();
 
-    var tableItemData = $(this).parent("td").parent("tr").data("author");
-    var id = tableItemData.id;
+    var id = $(this).data("chef_id");
     console.log(id);
     $.ajax({
       method: "DELETE",
-      url: "/api/authors/" + id
+      url: "/api/chefs/" + id
     }).then(
       function() {
         location.reload();

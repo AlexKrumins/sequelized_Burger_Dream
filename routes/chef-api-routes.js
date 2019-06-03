@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   app.get("/api/chefs", function(req, res) {
     db.Chef.findAll({
-      include: [db.Post]
+      include: [db.Burger]
     }).then(function(dbChef) {
       res.json(dbChef);
     });
@@ -14,7 +14,7 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       },
-      include: [db.Post]
+      include: [db.Burger]
     }).then(function(dbChef) {
       res.json(dbChef);
     });

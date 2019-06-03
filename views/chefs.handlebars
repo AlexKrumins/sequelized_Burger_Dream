@@ -3,6 +3,7 @@
     <div class="author-container">
       <h1>Chefs</h1>
       <table class="table table-striped">
+        
         <thead>
           <tr>
             <th>Name</th>
@@ -12,10 +13,19 @@
             <th>Delete Chef</th>
           </tr>
         </thead>
+
         <tbody>
+          
+          {{#if chefs}}
             {{#each chefs}}
               {{> chefs/chef-block}}
             {{/each}}
+          {{else}}
+            <div class="alert alert-danger">
+              You must create a Chef before adding Burgers to the Menu.
+            </div>
+          {{/if}}
+
           <tr id="form-row">
             <form class="chef-form">
               <td colspan="4">
@@ -25,7 +35,9 @@
               </td>
             </form>
           </tr>
+
         </tbody>
+
       </table>
     </div>
   </div>

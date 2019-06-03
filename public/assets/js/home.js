@@ -17,11 +17,9 @@ $(function() {
   });
 
   $(".baku-delete").on("click", function(event) {
-    var currentPost = $(this)
-      .parent()
-      .parent()
-      .data("post");
-    deletePost(currentPost.id);
+    event.preventDefault();
+    
+    var id = $(this).data("id");
   
     $.ajax({
       method: "DELETE",
