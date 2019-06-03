@@ -1,23 +1,24 @@
 $(function() {
-  $(".create-form").on("submit", function(event) {
+
+  getChefs();
+
+  $(".chef-form").on("submit", function(event) {
     event.preventDefault();
 
-    var newBurger = {
-      burger_name: $("#bk").val().trim(),
-      devoured: $("[name=eat]:checked").val().trim()
+    var newChef = {
+      name: $("#chef-name").val().trim(),
     };
-    if (newBurger.burger_name !== "") {
-      $.ajax("/api/burgers", {
+    if (newChef.name !== "") {
+      $.ajax("/api/chefs", {
         type: "POST",
-        data: newBurger
+        data: newChef
       }).then(
         function() {
-          console.log("created new burger");
           location.reload();
         }
       );
     } else {
-      alert("Please give your dream burger a name.")
+      alert("Please give your chef a really dreamy name.")
     }
   });
 });

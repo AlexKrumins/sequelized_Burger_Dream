@@ -32,8 +32,14 @@ module.exports = function(app) {
   });
 
   // authors route loads author-manager.html
-  app.get("/authors", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/author-manager.html"));
+  app.get("/chefs", function(req, res) {
+    db.Chef.findAll({})
+    .then(function (dbChef) {
+      var hbsObject = {
+        chefs: dbChef
+      };
+      res.render("chefs", hbsObject);
+    });
   });
 
 };
