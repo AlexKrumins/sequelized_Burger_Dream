@@ -1,7 +1,5 @@
 $(function() {
 
-  getChefs();
-
   $(".chef-form").on("submit", function(event) {
     event.preventDefault();
 

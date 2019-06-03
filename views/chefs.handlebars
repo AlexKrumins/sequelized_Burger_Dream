@@ -13,6 +13,9 @@
           </tr>
         </thead>
         <tbody>
+            {{#each chefs}}
+              {{> chefs/chef-block}}
+            {{/each}}
           <tr id="form-row">
             <form class="chef-form">
               <td colspan="4">

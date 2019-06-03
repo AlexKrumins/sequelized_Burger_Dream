@@ -1,49 +1,27 @@
 <div class="col-5" id="leftburgers">
-<h2>Burgers that are ready to be devoured!</h2>
+    
+  <h2>Burgers that are ready to be devoured!</h2>
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devourIt=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
+  <ul>
+    {{#each burgers}}
+      {{#unless devoured}}
+        {{> burgers/burger-block devourIt=true}}
+      {{/unless}}
+    {{/each}}
+  </ul>
+
 </div>
+
 <div class="col-5" id="rightburgers">
-<h2>Burgers that have been devoured!</h2>
+  
+  <h2>Burgers that have been devoured!</h2>
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devourIt=false}}
-    {{/if}}
-  {{/each}}
-</ul>
+  <ul>
+    {{#each burgers}}
+      {{#if devoured}}
+        {{> burgers/burger-block devourIt=false}}
+      {{/if}}
+    {{/each}}
+  </ul>
 
 </div>
-<form class="create-form">
-<h2>Add a Dream Burger of your very own!</h2>
-
-  <div class="form-group">
-    <label for="bk">Burger Name:</label>
-    <input type="text" id="bk" name="burger_name">
-  </div>
-
-  <div class="form-group">
-    <label for="eat">Immediately Devour this Burger?</label><br>
-    <input type="radio" name="eat" value="0" checked> Save it.
-    <input type="radio" name="eat" value="1"> EAT IT!<br>
-  </div>
-
-  <button type="submit">Add to the Menu</button>
-</form>
-
-	<footer>
-		<div class="container">
-			<span>||</span>
-			<a href="/api/burgers"><img src="../assets/images/bargar_icon.png" alt="Github" height="42" align="middle">Burgers in the API</a>
-			<span>||</span>
-			<a href="https://github.com/AlexKrumins/Dream_Burger"> <img src="../assets/images/GitHub-Mark.png" alt="Github" height="42" align="middle">GitHub Repository</a>
-			<span>||</span>
-		</div>
-	</footer>
