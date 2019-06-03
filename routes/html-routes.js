@@ -27,8 +27,17 @@ module.exports = function(app) {
   });
 
   // blog route loads blog.html
-  app.get("/blog", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/blog.html"));
+  app.get("/menu", function(req, res) {
+    db.Burger.findAll({})
+    .then(function (dbBurger) {
+      if (!dbBurger.length) {
+        window.location.href = "/chefs";
+      }
+      var hbsObject = {
+        burgers: dbBurger
+      };
+      res.render("index", hbsObject);
+    });
   });
 
   // authors route loads author-manager.html
