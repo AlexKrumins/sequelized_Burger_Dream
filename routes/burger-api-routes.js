@@ -1,7 +1,7 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  
+
   app.get("/api/burgers", function(req, res) {
     db.Burger.findAll({
       include: [db.Chef]
@@ -27,12 +27,12 @@ module.exports = function(app) {
     });
   });
 
-  app.put("/api/burgers", function(req, res) {
-    db.Burger.update(
-      req.body,
-      {
+  app.put("/api/burgers/:id", function(req, res) {
+    db.Burger.update({
+      devoured: req.body.devoured,
+      },{
       where: {
-        id: req.body.id
+        id: req.params.id
       }
     }).then(function(dbBurger) {
       res.json(dbBurger);

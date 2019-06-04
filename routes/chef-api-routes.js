@@ -1,6 +1,7 @@
 var db = require("../models");
 
 module.exports = function(app) {
+  
   app.get("/api/chefs", function(req, res) {
     db.Chef.findAll({
       include: [db.Burger]
