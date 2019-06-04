@@ -1,6 +1,6 @@
-$(document).ready(function() {
+$(function() {
 
-  $(document).on("click", ".change-devour", function() {
+  $(".change-devour").on("click", function() {
     var id = $(this).data("id");
     var changeState = $(this).data("changestate");
     var newState = {
@@ -16,7 +16,7 @@ $(document).ready(function() {
     );
   });
 
-  $(document).on("click", ".baku-delete", function() {
+  $(".baku-delete").on("click", function() {
     var id = $(this).data("id");
     $.ajax({
       method: "DELETE",
