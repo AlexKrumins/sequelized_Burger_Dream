@@ -1,10 +1,12 @@
-$(function() {
+$(document).ready(function() {
+
   $(".create-form").on("submit", function(event) {
     event.preventDefault();
 
     var newBurger = {
       burger_name: $("#bk").val().trim(),
-      devoured: $("[name=eat]:checked").val().trim()
+      devoured: $("[name=eat]:checked").val().trim(),
+      ChefId: $("#chef").val()
     };
     if (newBurger.burger_name !== "") {
       $.ajax("/api/burgers", {

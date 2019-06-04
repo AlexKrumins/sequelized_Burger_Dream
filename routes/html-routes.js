@@ -22,7 +22,13 @@ module.exports = function(app) {
 
   // cms route loads cms.html
   app.get("/create", function(req, res) {
-    res.render("create");
+    db.Chef.findAll({})
+      .then(function (dbChef) {
+        var hbsObject = {
+          chefs: dbChef
+        }
+        res.render("create", hbsObject);
+      });
   });
 
   // blog route loads blog.html
@@ -30,8 +36,7 @@ module.exports = function(app) {
     db.Burger.findAll({})
     .then(function (dbBurger) {
       if (!dbBurger.length) {
-        window.
-        location.href = "/chefs";
+        window.location.href = "/chefs";
       }
       var hbsObject = {
         burgers: dbBurger

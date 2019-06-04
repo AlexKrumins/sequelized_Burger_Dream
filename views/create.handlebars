@@ -12,5 +12,14 @@
     <input type="radio" name="eat" value="1"> EAT IT!<br>
   </div>
 
+  <div class="form-group">
+    <label for="chefSelect">Select Chef:</label>
+    <select class="custom-select" id="chef">
+      {{#each chefs}}
+        {{> chefs/chef-select}}
+      {{/each}}
+    </select>
+  </div>
+
   <button type="submit">Add to the Menu</button>
 </form>
