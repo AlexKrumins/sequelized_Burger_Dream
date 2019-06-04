@@ -24,14 +24,14 @@ $(function() {
     event.preventDefault();
 
     var id = $(this).data("chef_id");
+    console.log(id);
     $.ajax({
       method: "DELETE",
       url: "/api/chefs/" + id
     }).then(
       function() {
         location.reload();
-      }
-    );
+      });
   })
 });
  

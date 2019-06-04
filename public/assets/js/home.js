@@ -1,7 +1,10 @@
 $(function() {
 
   $(".change-devour").on("click", function() {
-    var id = $(this).data("id");
+    event.preventDefault();
+    
+    var id = $(this).data("burger_id");
+    console.log(id);
     var changeState = $(this).data("changestate");
     var newState = {
       devoured: changeState
@@ -16,13 +19,16 @@ $(function() {
     );
   });
 
-  $(".baku-delete").on("click", function() {
-    var id = $(this).data("id");
+  $(".baku-delete").on("click", function(event) {
+    event.preventDefault();
+    
+    var id = $(this).data("burger_id");
+    console.log(id);
     $.ajax({
       method: "DELETE",
-      url: "/api/posts/" + id
-    })
-      .then(function() {
+      url: "/api/burgers/" + id
+    }).then(
+      function() {
         location.reload();
       });
   });

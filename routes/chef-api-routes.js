@@ -21,9 +21,10 @@ module.exports = function(app) {
   });
 
   app.post("/api/chefs", function(req, res) {
-    db.Chef.create(req.body).then(function(dbChef) {
-      res.json(dbChef);
-    });
+    db.Chef.create(req.body)
+      .then(function(dbChef) {
+        res.json(dbChef);
+      });
   });
 
   app.delete("/api/chefs/:id", function(req, res) {

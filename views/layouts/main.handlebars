@@ -13,21 +13,21 @@
 		<script src="/assets/js/chefs.js"></script>
 	</head>
 	<body>
-		<div class="row">
-      <div class="col-md-2 col-sm-2">
-        <a class="btn btn-light" href="/">Our Menu</a>
-      </div>
-      <div class="col-md-2 col-sm-2">
-        <a class="btn btn-light" href="/create">Create a Burger</a>
-      </div>
-      <div class="col-md-2 col-sm-2">
-        <a class="btn btn-light" href="/chefs">Chefs</a>
-      </div>
-    </div>
+		
+		<nav class="navbar navbar-expand">
+			<div class="navbar-nav">
+			<a class="nav-item btn btn-danger m-2" href="/">Our Menu</a>
+			<span> </span>
+			<a class="nav-item btn btn-danger m-2" href="/create">Create a Burger</a>
+			<span> </span>
+			<a class="nav-item btn btn-danger m-2" href="/chefs">Chefs</a>
+			</div>
+		</nav>
+
 		<h1>DREAM BURGER!</h1>
 		{{{ body }}}
 		
-	<footer>
+	<footer class="footer mt-auto py-3 fixed-bottom">
 		<div class="container">
 			<span>||</span>
 			<a href="/api/burgers"><img src="../assets/images/bargar_icon.png" alt="Github" height="42" align="middle">Burgers in the API</a>

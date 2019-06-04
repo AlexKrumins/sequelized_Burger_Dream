@@ -9,16 +9,16 @@ var db = require("../models");
 // Routes
 // =============================================================
 module.exports = function(app) {
-
+  
   app.get("/", function(req, res) {
     db.Burger.findAll({})
-      .then(function (dbBurger) {
-        var hbsObject = {
-          burgers: dbBurger
-        };
-        console.log(hbsObject)
-        res.render("index", hbsObject);
-      });
+    .then(function (dbBurger) {
+      console.log(dbBurger);
+      var hbsObject = {
+        burgers: dbBurger
+      };
+      res.render("burgers", hbsObject);
+    });
   });
 
   // cms route loads cms.html
@@ -39,7 +39,7 @@ module.exports = function(app) {
       var hbsObject = {
         burgers: dbBurger
       };
-      res.render("index", hbsObject);
+      res.render("burgers", hbsObject);
     });
   });
 
@@ -47,10 +47,10 @@ module.exports = function(app) {
   app.get("/chefs", function(req, res) {
     db.Chef.findAll({})
     .then(function (dbChef) {
+      console.log(dbChef);
       var hbsObject = {
         chefs: dbChef
       };
-      console.log(dbChef)
       res.render("chefs", hbsObject);
     });
   });
