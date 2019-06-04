@@ -16,6 +16,7 @@ module.exports = function(app) {
         var hbsObject = {
           burgers: dbBurger
         };
+        console.log(hbsObject)
         res.render("index", hbsObject);
       });
   });
@@ -35,9 +36,6 @@ module.exports = function(app) {
   app.get("/menu", function(req, res) {
     db.Burger.findAll({})
     .then(function (dbBurger) {
-      if (!dbBurger.length) {
-        window.location.href = "/chefs";
-      }
       var hbsObject = {
         burgers: dbBurger
       };
@@ -52,6 +50,7 @@ module.exports = function(app) {
       var hbsObject = {
         chefs: dbChef
       };
+      console.log(dbChef)
       res.render("chefs", hbsObject);
     });
   });

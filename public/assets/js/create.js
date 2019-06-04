@@ -8,6 +8,7 @@ $(document).ready(function() {
       devoured: $("[name=eat]:checked").val().trim(),
       ChefId: $("#chef").val()
     };
+    console.log(newBurger.ChefId);
     if (newBurger.burger_name !== "") {
       $.ajax("/api/burgers", {
         type: "POST",
