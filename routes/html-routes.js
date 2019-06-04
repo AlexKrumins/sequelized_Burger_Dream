@@ -4,7 +4,6 @@
 
 // Dependencies
 // =============================================================
-var path = require("path");
 var db = require("../models");
 
 // Routes
@@ -28,13 +27,11 @@ module.exports = function(app) {
 
   // blog route loads blog.html
   app.get("/menu", function(req, res) {
-    if (url.indexOf("?chef_id") !== -1) {
-      chef_id = url.split
-    }
     db.Burger.findAll({})
     .then(function (dbBurger) {
       if (!dbBurger.length) {
-        window.location.href = "/chefs";
+        window.
+        location.href = "/chefs";
       }
       var hbsObject = {
         burgers: dbBurger
