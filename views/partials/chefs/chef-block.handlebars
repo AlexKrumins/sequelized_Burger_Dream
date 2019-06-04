@@ -1,0 +1,32 @@
+<tr>
+
+	<td>{{name}}</td>
+
+	<td>
+		{{#if burgers}}
+			{{burgers.length}}
+		{{else}}
+			0
+		{{/if}}
+	</td>
+
+	<td>
+		<a href="/menu?chef_id={{id}}">
+			This Chef's Burgers
+		</a>
+	</td>
+
+	<td>
+		<a href="/create?chef_id={{id}}">
+			Create a Burger
+		</a>
+	</td>
+
+	<td>
+		<a style='cursor:pointer;color:red' class='fired' data-chef_id="{{id}}">
+			Fire this Chef
+		</a>
+	</td>
+
+</tr>
+
