@@ -11,7 +11,7 @@ $(function() {
     };
     $.ajax({
       method: "PUT",
-      url: "/api/burgers/"+burger_id,
+      url: "/api/burgers/" + burger_id,
       data: newState
     }).then(
       function() {
