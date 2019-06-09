@@ -8,7 +8,7 @@
   
   <div class="form-group">
     <label for="chefSelect">Select Chef:</label>
-    <select class="custom-select col-4" id="chef">
+    <select class="custom-select col-4" id="chef" selected="{{searchedChef}}">
       {{#each chefs}}
         {{> chefs/chef-select}}
       {{/each}}

@@ -7,7 +7,7 @@ $(document).ready(function() {
     
     if (url.indexOf("?burger_id=") !== -1) {
       burgerId = url.split("=")[1];
-      getPostData(burgerId, "post");
+      getBurger(burgerId, "post");
     }
     else if (url.indexOf("?chef_id=") !== -1) {
       chefId = url.split("=")[1];

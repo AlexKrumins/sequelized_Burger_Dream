@@ -12,11 +12,21 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/create", function(req, res) {
+  app.get("/", function(req, res) {
+    db.Burger.findAll({})
+    .then(function (dbBurger) {
+      var hbsObject = {
+        burgers: dbBurger
+      };
+      res.render("burgers", hbsObject);
+    });
+  });
+
+  app.get("/create/:id?", function(req, res) {
     db.Chef.findAll({})
       .then(function (dbChef) {
         var hbsObject = {
-          chefs: dbChef
+          chefs: dbChef,
         }
         res.render("create", hbsObject);
       });

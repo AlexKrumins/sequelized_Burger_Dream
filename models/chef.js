@@ -1,7 +1,11 @@
 module.exports = function(sequelize, DataTypes) {
   var Chef = sequelize.define("Chef", {
     // Giving the Chef model a name of type STRING
-    name: DataTypes.STRING
+    name: DataTypes.STRING,
+    selected: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    }
   });
 
   Chef.associate = function(models) {
