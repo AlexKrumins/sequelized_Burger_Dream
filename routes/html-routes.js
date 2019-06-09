@@ -22,7 +22,7 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/create/:id?", function(req, res) {
+  app.get("/create/:chef_id?", function(req, res) {
     db.Chef.findAll({})
       .then(function (dbChef) {
         var hbsObject = {
@@ -32,8 +32,17 @@ module.exports = function(app) {
       });
   });
 
-  app.get("/menu", function(req, res) {
-    db.Burger.findAll({})
+  app.get("/menu/:chef_id?", function(req, res) {
+    var whereCondition = {};
+    if(req.params.chef_id){
+      whereCondition = {
+        ChefId: req.params.chef_id
+      }
+    }
+    db.Burger.findAll({
+      where: whereCondition,
+      include: [db.Chef]
+    })
     .then(function (dbBurger) {
       var hbsObject = {
         burgers: dbBurger
