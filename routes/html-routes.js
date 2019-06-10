@@ -3,10 +3,13 @@ var db = require("../models");
 module.exports = function(app) {
 
   app.get("/", function(req, res) {
-    db.Burger.findAll({})
-    .then(function (dbBurger) {
+    db.Burger.findAll({
+      include: [db.Chef]
+    })
+    .then(function (dbBurger, dbChef) {
       var hbsObject = {
-        burgers: dbBurger
+        burgers: dbBurger,
+        chefs: dbChef
       };
       res.render("burgers", hbsObject);
     });

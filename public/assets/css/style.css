@@ -70,9 +70,11 @@ table {
     1px 1px 0 rgb(32, 32, 32);
   font-family: 'Righteous', cursive;
 }
+
 .alert {
   font-family: 'Righteous', cursive;
 }
+
 td button {
   border-radius: 10px !important;
   width: auto;
@@ -95,4 +97,9 @@ td button {
 .form-group {
   margin-top: 5px;
   margin-bottom: 5px;
+  text-shadow:
+  -1px -1px 0 white,  
+   1px -1px 0 white,
+   -1px 1px 0 white,
+    1px 1px 0 white;
 }
