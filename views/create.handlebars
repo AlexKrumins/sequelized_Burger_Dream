@@ -1,14 +1,28 @@
 <form class="create-form">
 <h2>Add a Dream Burger of your very own!</h2>
+  
+{{#unless chefs}}
+<br>
+  <div class="col-md-8 offset-md-2">
+    <div class="author-container">
+      <table class="table table-striped table-dark table-hover">
+        <tbody>
+          <div class="shadow alert alert-danger">
+            You must create a Chef before adding Burgers to the Menu.
+          </div>
+        </tbody>
+      </table>
+    </div>
+  </div>
+{{/unless}}
 
   <div class="form-group">
-    <label for="bk">Burger Name:</label>
-    <input class="col-4" type="text" id="bk" name="burger_name">
+    <input class="col-4" type="text" id="bk" name="burger_name" placeholder="Name your Burger">
   </div>
   
   <div class="form-group">
-    <label for="chefSelect">Select Chef:</label>
     <select class="custom-select col-4" id="chef">
+      <option value="0">Select a Chef</option>
       {{#each chefs}}
         {{> chefs/chef-select}}
       {{/each}}

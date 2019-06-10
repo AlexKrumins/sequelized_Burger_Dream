@@ -1,18 +1,7 @@
 $(document).ready(function() {
-  var url = window.location.search;
-  var burgerId;
-  var chefId
-  
+
   $(function() {
-    
-    if (url.indexOf("?burger_id=") !== -1) {
-      burgerId = url.split("=")[1];
-      getBurger(burgerId, "post");
-    }
-    else if (url.indexOf("?chef_id=") !== -1) {
-      chefId = url.split("=")[1];
-    }
-    
+
     $(".change-devour").on("click", function() {
       event.preventDefault();
       

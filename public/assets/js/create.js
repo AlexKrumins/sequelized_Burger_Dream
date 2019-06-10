@@ -17,7 +17,7 @@ $(function() {
       devoured: $("[name=eat]:checked").val().trim(),
       ChefId: $("#chef").val()
     };
-    if (newBurger.burger_name !== "") {
+    if (newBurger.burger_name !== "" && newBurger.ChefId !== "0") {
       $.ajax("/api/burgers", {
         type: "POST",
         data: newBurger
@@ -27,7 +27,7 @@ $(function() {
         }
       );
     } else {
-      alert("Please give your dream burger a name.")
+      alert("Please give your dream burger a name and pick a chef.")
     }
   });
 });

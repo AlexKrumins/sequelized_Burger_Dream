@@ -1,5 +1,10 @@
+{{#unless burgers}}
+<h2>Unfortunately, there are no burgers on this page of the Menu</h2>
+<br>
+<h2>However, you can <a href="/chefs">click here to hire a chef</a></h2>
+<h2>or you can <a href="/create">click here to create a burger</a></h2>
+{{else}}
 <div class="col-5" id="leftburgers">
-    
   <h2>Burgers that are ready to be devoured!</h2>
 
   <ul>
@@ -25,3 +30,4 @@
   </ul>
 
 </div>
+{{/unless}}

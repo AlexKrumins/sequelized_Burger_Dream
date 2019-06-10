@@ -61,4 +61,22 @@ module.exports = function(app) {
     });
   });
 
+  app.get("api/chefs", function(req, res) {
+    db.Chef.findAll({
+      include: [db.Burger]
+    })
+    .then(function(dbChef) {
+      res.json(dbChef);
+    });
+  });
+
+  app.get("api/burgers", function(req, res) {
+    db.Burger.findAll({
+      include: [db.Chef]
+    })
+    .then(function (dbBurger) {
+      return res.json(dbBurger);
+    });
+  });
+
 };
