@@ -1,6 +1,7 @@
 # sequelized_Burger_Dream
 https://murmuring-oasis-86835.herokuapp.com/
 ![screenshot](./public/assets/images/Screenshot_(36).png)
+C:\Users\justk\git\personal\sequelized_Burger_Dream\public\assets\images\Screenshot (36).png
 ![screenshot](./public/assets/images/Screenshot_(37).png)
 ![screenshot](./public/assets/images/Screenshot_(38).png)
 # What the project does:
