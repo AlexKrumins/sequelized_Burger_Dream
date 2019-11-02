@@ -2,6 +2,12 @@ var url = window.location.search;
 var selectedChef = url.split("=")[1];
 // $("select option[value='"+authorId+"']").attr("selected", "selected")
 $(function() {
+  
+  $("select option").each(function(){	
+    if ($(this).val() == selectedChef){	
+      $(this).attr("selected","selected");	
+    }	
+  });	
 
   $(".create-form").on("submit", function(event) {
     event.preventDefault();

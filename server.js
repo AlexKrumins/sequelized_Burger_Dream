@@ -1,5 +1,5 @@
 var express = require("express");
-
+var sequelize = require("sequelize")
 var PORT = process.env.PORT || 8000;
 
 var app = express();
