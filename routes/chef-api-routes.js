@@ -29,11 +29,16 @@ module.exports = function(app) {
   });
 
   app.delete("/api/chefs/:id", function(req, res) {
-    db.Chef.destroy({
+    db.Burger.destroy({
       where: {
-        id: req.params.id
+        ChefId: req.params.id
       }
-    }).then(function(dbChef) {
+    }).then(
+      db.Chef.destroy({
+        where: {
+          id: req.params.id
+        }})
+    ).then(function(dbChef) {
       res.json(dbChef);
     });
   });
